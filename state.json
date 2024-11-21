@@ -1,0 +1,63 @@
+{
+  "cookies": [
+    {
+      "name": "mp_dea505ce72074a3fc945ff528a227275_mixpanel",
+      "value": "%7B%22distinct_id%22%3A%20%22%24device%3A1934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d%22%2C%22%24device_id%22%3A%20%221934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22__mps%22%3A%20%7B%7D%2C%22__mpso%22%3A%20%7B%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%7D%2C%22__mpus%22%3A%20%7B%7D%2C%22__mpa%22%3A%20%7B%7D%2C%22__mpu%22%3A%20%7B%7D%2C%22__mpr%22%3A%20%5B%5D%2C%22__mpap%22%3A%20%5B%5D%7D",
+      "domain": ".flywp.com",
+      "path": "/",
+      "expires": 1763719828,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "partnero_session_uuid",
+      "value": "8a7d6b44-d6bc-491d-a52b-6c0831854b2e",
+      "domain": ".flywp.com",
+      "path": "/",
+      "expires": 1766743826.63597,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "XSRF-TOKEN",
+      "value": "eyJpdiI6Ik1QZ25ub29mV3RYOU5LVUJyMzRDZXc9PSIsInZhbHVlIjoiYVVMWDhBK2FSZ251dmJHcEkrYjFoZzdhQ2ltVVN2SVJ6VUV6dS9lTmZMUHVLYnc2bmdFNHVnRTlDd3BaNi95ZUlGNmFvVlBCV3RxME1YZXMvRkltRGpPdkVlU0d3TzVZSzNDekNyWFArOTRNZGNpeHlRa1JPamxTbm9JUGRPN3giLCJtYWMiOiIzZGZlNWFkM2JhZDUyNzkyZmFhMjU4YmJiOTUzOGMxNzM3NmE3MDc0OWMwYTk2Y2JhNzMzMzQ1MjdmNGM5YjBmIiwidGFnIjoiIn0%3D",
+      "domain": "app.flywp.com",
+      "path": "/",
+      "expires": 1732191028.44698,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "flywp_session",
+      "value": "eyJpdiI6ImVTNFFlVGFGWS8raUNHc1RWRElldnc9PSIsInZhbHVlIjoiZjlZR2xrdVZQSldYT0N4amdjeVZ6RGFCR0tDbEJVMW1oN2JjM1RPSWlrUkNGWE1nU3pHN2FyMENrSngvQnYyUENtdkVYTFVRSGY0aTZUVnNvcTNlRXhzRVB2eGhhRExGRmxJaG9PbkoyYTJleUZDS2RyaDFPYm1SamVSK1pmSlIiLCJtYWMiOiIzMTBmZDY4NjVmNTc3OTRkZjJiMDQyMTUyMjVkNzY5ZThlODU5YmJlYWE4YzVlZDMwNDA1M2ZlOGIxZjQ4NDhhIiwidGFnIjoiIn0%3D",
+      "domain": "app.flywp.com",
+      "path": "/",
+      "expires": 1732191028.447046,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://app.flywp.com",
+      "localStorage": [
+        {
+          "name": "server_view",
+          "value": "grid"
+        },
+        {
+          "name": "pusherTransportTLS",
+          "value": "{\"timestamp\":1732183826457,\"transport\":\"ws\",\"latency\":602,\"cacheSkipCount\":0}"
+        },
+        {
+          "name": "__mpq_dea505ce72074a3fc945ff528a227275_ev",
+          "value": "[{\"id\":\"br6ll5mj95sfr75t\",\"flushAfter\":1732183836115,\"payload\":{\"event\":\"$mp_web_page_view\",\"properties\":{\"$os\":\"Windows\",\"$browser\":\"Chrome\",\"$current_url\":\"https://app.flywp.com/login\",\"$browser_version\":131,\"$screen_height\":720,\"$screen_width\":1280,\"mp_lib\":\"web\",\"$lib_version\":\"2.55.1\",\"$insert_id\":\"8ozznrjee5y774aj\",\"time\":1732183826.115,\"distinct_id\":\"$device:1934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d\",\"$device_id\":\"1934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d\",\"$initial_referrer\":\"$direct\",\"$initial_referring_domain\":\"$direct\",\"current_page_title\":\"FlyWP\",\"current_domain\":\"app.flywp.com\",\"current_url_path\":\"/login\",\"current_url_protocol\":\"https:\",\"token\":\"dea505ce72074a3fc945ff528a227275\"}}},{\"id\":\"cif7a5kvhdb3qzp2\",\"flushAfter\":1732183836162,\"payload\":{\"event\":\"Page Viewed\",\"properties\":{\"$os\":\"Windows\",\"$browser\":\"Chrome\",\"$current_url\":\"https://app.flywp.com/login\",\"$browser_version\":131,\"$screen_height\":720,\"$screen_width\":1280,\"mp_lib\":\"web\",\"$lib_version\":\"2.55.1\",\"$insert_id\":\"ig7d6cbvpehamja0\",\"time\":1732183826.162,\"distinct_id\":\"$device:1934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d\",\"$device_id\":\"1934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d\",\"$initial_referrer\":\"$direct\",\"$initial_referring_domain\":\"$direct\",\"page\":\"/login\",\"token\":\"dea505ce72074a3fc945ff528a227275\"}}},{\"id\":\"i0s6wuczmntaunwb\",\"flushAfter\":1732183838536,\"payload\":{\"event\":\"Page Viewed\",\"properties\":{\"$os\":\"Windows\",\"$browser\":\"Chrome\",\"$current_url\":\"https://app.flywp.com/servers\",\"$browser_version\":131,\"$screen_height\":720,\"$screen_width\":1280,\"mp_lib\":\"web\",\"$lib_version\":\"2.55.1\",\"$insert_id\":\"pb82tzd9w8zcc56k\",\"time\":1732183828.536,\"distinct_id\":\"$device:1934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d\",\"$device_id\":\"1934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d\",\"$initial_referrer\":\"$direct\",\"$initial_referring_domain\":\"$direct\",\"page\":\"/servers\",\"token\":\"dea505ce72074a3fc945ff528a227275\"}}},{\"id\":\"s7yjcn55rn6qz1rd\",\"flushAfter\":1732183838537,\"payload\":{\"event\":\"Logged In\",\"properties\":{\"$os\":\"Windows\",\"$browser\":\"Chrome\",\"$current_url\":\"https://app.flywp.com/servers\",\"$browser_version\":131,\"$screen_height\":720,\"$screen_width\":1280,\"mp_lib\":\"web\",\"$lib_version\":\"2.55.1\",\"$insert_id\":\"upz4ol2xexd4hant\",\"time\":1732183828.537,\"distinct_id\":\"$device:1934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d\",\"$device_id\":\"1934e339ec158d-0ab0a1e7e20ef5-1239307b-e1000-1934e339ec158d\",\"$initial_referrer\":\"$direct\",\"$initial_referring_domain\":\"$direct\",\"token\":\"dea505ce72074a3fc945ff528a227275\"}}}]"
+        }
+      ]
+    }
+  ]
+}
