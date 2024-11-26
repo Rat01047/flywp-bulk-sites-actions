@@ -2,6 +2,9 @@ import type { PlaywrightTestConfig } from "@playwright/test";
 import { devices } from "@playwright/test";
 import * as fs from 'fs';
 import * as path from 'path';
+import { config as dotenvConfig } from 'dotenv';
+dotenvConfig(); // Load environment variables from .env file
+
 
 /**
  * Read environment variables from file.
