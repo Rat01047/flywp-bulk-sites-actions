@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { AuthPage } from "../pages/authPage";
-import { ServersPage } from "../pages/servers";
+import { SitesBulkAction } from "../pages/sitesBulkAction";
 import { Users, Servers } from "../utils/testData";
 import * as fs from "fs";
 
@@ -38,8 +38,8 @@ test('Delete Sites Using Stored State', async ({ page }) => {
 
   try {
     // Delete sites
-    const serversPage = new ServersPage(page);
-    await serversPage.deleteServerAllSites(Servers.serverName);
+    const sitesBulkAction = new SitesBulkAction(page);
+    await sitesBulkAction.deleteServerAllSites(Servers.serverName);
     console.log('Site deletion completed successfully');
   } catch (error) {
     console.error('Site deletion failed:', error);

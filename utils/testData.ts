@@ -12,10 +12,6 @@ let Urls: {
 };
 
 
-// New user data
-let newUsername = faker.internet.username();
-let newUserPassword = faker.internet.password();
-
 let Users: {
      // User Credentials
      userEmail: string;
@@ -45,8 +41,13 @@ let Servers: {
 };
 
 
+// Server data
+let Sites: {
+    sitesCount: number;
+} = {
+    sitesCount: Number(process.env.SITES_COUNT) || 1, // Providing a default value (1) when process.env.SITES_COUNT is undefined
 
-
+};
 
 
 
@@ -57,4 +58,5 @@ export {
     Urls,
     Users,
     Servers,
+    Sites
 };
