@@ -57,16 +57,11 @@ const config: PlaywrightTestConfig = {
     /* Configure projects for major browsers */
     projects: [
         {
-            name: "chromium",
+            name: "Google Chrome",
             use: {
                 ...devices["Desktop Chrome"],
-                // Conditionally add storageState only if the file exists
-                ...(() => {
-                    const stateFilePath = path.resolve(process.cwd(), 'state.json');
-                    return fs.existsSync(stateFilePath) 
-                        ? { storageState: stateFilePath } 
-                        : {};
-                })(),
+                channel: "chrome",
+                storageState: "state.json",
             },
         },
     ],

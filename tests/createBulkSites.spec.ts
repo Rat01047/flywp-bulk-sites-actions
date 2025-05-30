@@ -22,8 +22,9 @@ test('Login and Store State', async ({ browser, page }) => {
     await authPage.userLogin(Users.userEmail, Users.userPassword);
 
     // Store the state
-    await browser.contexts()[0].storageState({ path: 'state.json' });
+    await page.context().storageState({ path: 'state.json' }); 
     console.log('Login successful. State stored in state.json');
+    
   } catch (error) {
     console.error('Login failed:', error);
     throw error;

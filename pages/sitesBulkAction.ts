@@ -20,7 +20,7 @@ export class SitesBulkAction extends BasePage {
    * 
    */
   async createBulkSitesNginx(serverName: string, sitesCount: number) {
-    await this.page.goto(Urls.baseUrl + '/servers', { waitUntil: 'networkidle' });
+    await this.page.goto(Urls.baseUrl + '/servers', { waitUntil: 'domcontentloaded' });
     await this.page.waitForLoadState('domcontentloaded');
 
 
@@ -31,7 +31,8 @@ export class SitesBulkAction extends BasePage {
 
 
     for (let i = 0; i < sitesCount; i++) {
-      await this.page.goto(Urls.baseUrl + `/servers/${serverId}/sites`, { waitUntil: 'networkidle' });
+      await this.page.goto(Urls.baseUrl + `/servers/${serverId}/sites`, { waitUntil: 'domcontentloaded' });
+      await this.page.waitForLoadState('domcontentloaded');
 
       console.log(`Starting creation for site ${i + 1} of ${sitesCount}`);
 
@@ -65,6 +66,8 @@ export class SitesBulkAction extends BasePage {
 
       // Turning on purge cache
       await this.validateAndClick("(//button[@role='switch'])[2]");
+      await this.validateAndClick("//button[normalize-space(text())='Next']");
+
       // Click Create Site
       await this.validateAndClick("//button[normalize-space(text())='Create Site']");
 
@@ -89,10 +92,11 @@ export class SitesBulkAction extends BasePage {
   async deleteServerAllSites(serverName: string) {
     try {
       // Ensure you're on the correct page
-      await this.page.goto(Urls.baseUrl + '/servers', { waitUntil: 'networkidle' });
-
+      await this.page.goto(Urls.baseUrl + '/servers', { waitUntil: 'domcontentloaded' });
+      await this.page.waitForLoadState('domcontentloaded');
       // Select server
-      await this.page.click(`//a[contains(text(), "${serverName}")]`);
+      const serverNameLocator = `//a[contains(text(), "${serverName}")]`
+      await this.validateAndClick(serverNameLocator);
 
       // Get sites
       const response = await this.page.waitForResponse((response) =>
@@ -120,7 +124,7 @@ export class SitesBulkAction extends BasePage {
     try {
       // Navigate to site settings
       const siteUrl = `${Urls.baseUrl}/site/${siteId}/settings`;
-      await this.page.goto(siteUrl, { waitUntil: 'networkidle' });
+      await this.page.goto(siteUrl, { waitUntil: 'domcontentloaded' });
 
       // Click delete site button
       await this.validateAndClick('//button[contains(text(),"Delete Site")]');

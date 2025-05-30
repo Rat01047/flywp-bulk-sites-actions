@@ -12,7 +12,7 @@ export class AuthPage extends BasePage {
     const adminPassword = password; // User password
 
     // Visit login page
-    await this.page.goto(Urls.baseUrl + '/login', { waitUntil: 'networkidle' });
+    await this.page.goto(Urls.baseUrl + '/login', { waitUntil: 'domcontentloaded' });
 
     // Enter login credentials and submit
     await this.validateAndFillStrings('//input[@type="email"]', adminEmail);
@@ -20,6 +20,7 @@ export class AuthPage extends BasePage {
 
     // Click the login button
     await this.waitforLocatorAndClick('//button[text()="Log in"]');
+    
     await this.assertionValidate('//h2[normalize-space(text())="Servers"]');
     // Store Cookie State
     await this.page.context().storageState({ path: 'state.json' });

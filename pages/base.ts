@@ -52,7 +52,6 @@ export class BasePage {
 
     // Validate and Fill Strings
     async validateAndFillStrings(locator: string, value: string) {
-        await this.page.locator(locator).waitFor();
         expect(this.page.locator(locator).isVisible).toBeTruthy();
         await this.page.locator(locator).fill(value);
     };
