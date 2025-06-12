@@ -2,30 +2,30 @@
   "cookies": [
     {
       "name": "XSRF-TOKEN",
-      "value": "eyJpdiI6ImhHeTRSSGpEK1lvcGwxMU1WN003V0E9PSIsInZhbHVlIjoiUDZ1Q2tiQjFNcWFVV280MVgzendUSWI5RktjM2ZsV3daRDBjV0VzaVI4cS9LT1huM0lnWUZROUhsQUhxdlZhVkdGdGc4cHJ5b1VCck93ZWlEdDNEV3NDdkduNFB3TitVK2MrNVVSNUFSUEF1ZUJqdTR6QUZ1M2V4amgxNlNaa1kiLCJtYWMiOiI0Y2IxOTM5OWI4OWE5NjM5YmRiYjZlN2JlZmIzYmFjOGJlODVlNDQ3ZTk1NDY5MzRiZTdjZmQ1MmZiYzU3MDZkIiwidGFnIjoiIn0%3D",
+      "value": "eyJpdiI6Imh6Z0kxbzY2bUFIRnVEQnh4R1laY3c9PSIsInZhbHVlIjoiZzVnb3luM3NaMWhUUW1xdjVYVG1qNEdhbjI5RFVyaEZxOWJvUkFLcEZFTitoR04yQ3gyaUdNcCtCakQ1MlF3QnpsRUNJQURETzg0SUQxcGlvRnord2tVL1pOTlg3c3JYMDk0UnNiNHZ4eTlVNHNZZ1pMeTBFOXlOWk5yeVNYNjYiLCJtYWMiOiIyNGZkMWQ1MGUzMDAwY2UzZWM4MTkwMDc4ZjA3YjYzYTUzNmI0NmZkMWEzMjQyNjRhZTkzYWEzOTk0ZTNmYWY3IiwidGFnIjoiIn0%3D",
       "domain": "staging.flywp.dev",
       "path": "/",
-      "expires": 1749719640.031701,
+      "expires": 1749720651.738898,
       "httpOnly": false,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "flywp_staging_session",
-      "value": "eyJpdiI6InNhNjZtQ3crTlVublp1cXRCWmNZTVE9PSIsInZhbHVlIjoiTVpzeGJGOHdjNTVsVDBTVUtCYUR4TlZRbFR5ejgrdVpFL2luN2VoQUVQZjBUU0FmcUtxR01sZFhtYisxV2ZnVWJwRnhQNzZwL3J3THpxS1ArZDJFbVF2Z0ltSWw3VnpYQy9GSlBpQTAzY3hGUktkZGJ2QnhkQk1uT3NlcXJHYnUiLCJtYWMiOiI2YzdiNTk0ZjAzMjNmM2M1NjY2Y2VkOTQ3ZGMwNWEwMTYwMDU1YWNkMmVlNTI4NjcyZjcxODlkMzlmZjQ0ZDExIiwidGFnIjoiIn0%3D",
+      "value": "eyJpdiI6IlpOaysyTWxWSmJNRkhDZWF5d2J2Umc9PSIsInZhbHVlIjoiWi85SFd0Q1F0bnZFOUt3VUVRcG4xRFRGNjhJaDBwbkxPSEIyWGNtQWZFMkZ5eVRnMVlxSW9MUlp6dERBK0NJQzk2Uko5bXRzMUxNSURmQmtsc05weHNVSURlTG9saEdaRDhOa3Q5VlRicloveUZCQXlvVjdlSllrWlVNd1Q4YmciLCJtYWMiOiIxYjViZDJhMWMwZWRiNmRmYzcyOTk0YTk4YmFlNjlkZDE5YzhjNjA3N2JlZWFmMTE5ODk3NzNjMjhjMThjYjZlIiwidGFnIjoiIn0%3D",
       "domain": "staging.flywp.dev",
       "path": "/",
-      "expires": 1749719640.031767,
+      "expires": 1749720651.738932,
       "httpOnly": true,
       "secure": true,
       "sameSite": "Lax"
     },
     {
       "name": "crisp-client%2Fsession%2F38889913-eed0-445b-a646-05f66a9b22e7",
-      "value": "session_18466299-1331-408e-8dce-043c43ab4c5d",
+      "value": "session_85f6a1ac-a20f-4846-930e-01738a4120f6",
       "domain": ".flywp.dev",
       "path": "/",
-      "expires": 1765480440,
+      "expires": 1765481452,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -41,15 +41,23 @@
         },
         {
           "name": "crisp-client/session/38889913-eed0-445b-a646-05f66a9b22e7",
-          "value": "session_18466299-1331-408e-8dce-043c43ab4c5d"
+          "value": "session_85f6a1ac-a20f-4846-930e-01738a4120f6"
+        },
+        {
+          "name": "crisp-client/trigger/38889913-eed0-445b-a646-05f66a9b22e7/visit/last",
+          "value": "1749713452668"
         },
         {
           "name": "pusherTransportTLS",
-          "value": "{\"timestamp\":1749712439057,\"transport\":\"ws\",\"latency\":1453,\"cacheSkipCount\":0}"
+          "value": "{\"timestamp\":1749713450586,\"transport\":\"ws\",\"latency\":1300,\"cacheSkipCount\":0}"
         },
         {
           "name": "crisp-client/session/38889913-eed0-445b-a646-05f66a9b22e7:e",
-          "value": "1749728208440"
+          "value": "1749729220198"
+        },
+        {
+          "name": "crisp-client/trigger/38889913-eed0-445b-a646-05f66a9b22e7/visit/count",
+          "value": "1"
         }
       ]
     }
