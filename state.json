@@ -1,0 +1,57 @@
+{
+  "cookies": [
+    {
+      "name": "XSRF-TOKEN",
+      "value": "eyJpdiI6ImhHeTRSSGpEK1lvcGwxMU1WN003V0E9PSIsInZhbHVlIjoiUDZ1Q2tiQjFNcWFVV280MVgzendUSWI5RktjM2ZsV3daRDBjV0VzaVI4cS9LT1huM0lnWUZROUhsQUhxdlZhVkdGdGc4cHJ5b1VCck93ZWlEdDNEV3NDdkduNFB3TitVK2MrNVVSNUFSUEF1ZUJqdTR6QUZ1M2V4amgxNlNaa1kiLCJtYWMiOiI0Y2IxOTM5OWI4OWE5NjM5YmRiYjZlN2JlZmIzYmFjOGJlODVlNDQ3ZTk1NDY5MzRiZTdjZmQ1MmZiYzU3MDZkIiwidGFnIjoiIn0%3D",
+      "domain": "staging.flywp.dev",
+      "path": "/",
+      "expires": 1749719640.031701,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "flywp_staging_session",
+      "value": "eyJpdiI6InNhNjZtQ3crTlVublp1cXRCWmNZTVE9PSIsInZhbHVlIjoiTVpzeGJGOHdjNTVsVDBTVUtCYUR4TlZRbFR5ejgrdVpFL2luN2VoQUVQZjBUU0FmcUtxR01sZFhtYisxV2ZnVWJwRnhQNzZwL3J3THpxS1ArZDJFbVF2Z0ltSWw3VnpYQy9GSlBpQTAzY3hGUktkZGJ2QnhkQk1uT3NlcXJHYnUiLCJtYWMiOiI2YzdiNTk0ZjAzMjNmM2M1NjY2Y2VkOTQ3ZGMwNWEwMTYwMDU1YWNkMmVlNTI4NjcyZjcxODlkMzlmZjQ0ZDExIiwidGFnIjoiIn0%3D",
+      "domain": "staging.flywp.dev",
+      "path": "/",
+      "expires": 1749719640.031767,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "crisp-client%2Fsession%2F38889913-eed0-445b-a646-05f66a9b22e7",
+      "value": "session_18466299-1331-408e-8dce-043c43ab4c5d",
+      "domain": ".flywp.dev",
+      "path": "/",
+      "expires": 1765480440,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://staging.flywp.dev",
+      "localStorage": [
+        {
+          "name": "server_view",
+          "value": "grid"
+        },
+        {
+          "name": "crisp-client/session/38889913-eed0-445b-a646-05f66a9b22e7",
+          "value": "session_18466299-1331-408e-8dce-043c43ab4c5d"
+        },
+        {
+          "name": "pusherTransportTLS",
+          "value": "{\"timestamp\":1749712439057,\"transport\":\"ws\",\"latency\":1453,\"cacheSkipCount\":0}"
+        },
+        {
+          "name": "crisp-client/session/38889913-eed0-445b-a646-05f66a9b22e7:e",
+          "value": "1749728208440"
+        }
+      ]
+    }
+  ]
+}

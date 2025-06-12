@@ -61,7 +61,7 @@ const config: PlaywrightTestConfig = {
             use: {
                 ...devices["Desktop Chrome"],
                 channel: "chrome",
-                storageState: "e2e/state.json",
+                storageState: "state.json",
             },
         },
     ],

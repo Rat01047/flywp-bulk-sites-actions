@@ -80,23 +80,38 @@ export class SitesBulkAction extends BasePage {
 
   /** ----------------Deletion---------------- */
   /**
-   * Get all servers (id and name) from the servers page response.
+   * Get all servers (id and name) from the servers page response using a base helper.
    * @returns Promise<{id: number, name: string}[]>
    */
   async getAllServers(): Promise<{ id: number, name: string }[]> {
     await this.page.goto(Urls.baseUrl + '/servers', { waitUntil: 'domcontentloaded' });
     await this.page.waitForLoadState('domcontentloaded');
+    await this.validateAndClickAny('//a[contains(text(),"Servers")]');
     // Wait for the response that contains the servers data
     const response = await this.page.waitForResponse(
       resp => resp.url().endsWith('/servers') && resp.status() === 200
     );
-    const data = await response.json();
-    const servers = data.props?.servers || [];
+    const responseData = await response.json();
+    const servers = this.extractServerListFromResponse(responseData);
+    if (!servers.length) {
+      console.warn('No servers found in response!');
+      return [];
+    } else {
+      console.log('Extracted servers:', servers.map(s => `ID: ${s.id}, Name: ${s.name}`));
+      return servers;
+    }
+  }
+
+  /**
+   * Extract server list from response data (helper, can be moved to BasePage if not present)
+   */
+  extractServerListFromResponse(responseData: any): { id: number, name: string }[] {
+    const servers = responseData.props?.servers || [];
     return servers.map((srv: any) => ({ id: srv.id, name: srv.name }));
   }
 
   /**
-   * Delete all servers and their sites until none are left.
+   * Delete all servers and their sites until none are left, validating after each step.
    */
   async deleteAllServersAndSites() {
     while (true) {
@@ -117,19 +132,30 @@ export class SitesBulkAction extends BasePage {
       // Delete all sites and then the server for each server
       for (const { id, name } of servers) {
         console.log(`Deleting all sites for server: ${name} (ID: ${id})`);
-        await this.deleteServerAllSites(name);
-        console.log(`Deleting server: ${name} (ID: ${id})`);
+        await this.deleteServerAllSites(id, name);
+        // Validate no sites left
+        await this.page.goto(`${Urls.baseUrl}/servers/${id}/sites`, { waitUntil: 'domcontentloaded' });
+        await this.page.waitForLoadState('domcontentloaded');
+        await this.assertionValidate('//p[contains(text(),"No sites found. Start by creating one.")]');
+        console.log(`All sites deleted for server: ${name} (ID: ${id})`);
+        // Now delete the server
         await this.deleteServers(name);
       }
     }
+    // Final validation for no servers
+    await this.page.goto(Urls.baseUrl + '/servers', { waitUntil: 'domcontentloaded' });
+    await this.page.waitForLoadState('domcontentloaded');
+    await this.assertionValidate("//h3[contains(text(),'Create your first server')]");
+    console.log('All servers and sites deleted. Test complete.');
   }
 
   /**
    * Delete all sites for a given server.
    *
+   * @param serverId - The ID of the server whose sites should be deleted.
    * @param serverName - The name of the server whose sites should be deleted.
    */
-  async deleteServerAllSites(serverName: string) {
+  async deleteServerAllSites(serverId: number, serverName?: string) {
     try {
       // Ensure you're on the correct page
       await this.page.goto(Urls.baseUrl + '/servers', { waitUntil: 'domcontentloaded' });
@@ -153,11 +179,12 @@ export class SitesBulkAction extends BasePage {
       for (let siteId of siteIds) {
         await this.deleteSite(siteId);
       }
-} catch (error) {
+
+    } catch (error) {
       console.error('Delete server sites failed:', error);
       throw error;
     }
-  };
+  }
 
   /**
    * Delete a single site by its site ID.
@@ -170,12 +197,18 @@ export class SitesBulkAction extends BasePage {
       const siteUrl = `${Urls.baseUrl}/site/${siteId}/settings`;
       await this.page.goto(siteUrl, { waitUntil: 'domcontentloaded' });
 
+      // Click delete site button
       await this.validateAndClick('//button[contains(text(),"Delete Site")]');
+      // Store site name
       const storeSiteName = await this.page.inputValue('//input[@placeholder="domain.com"]');
       console.log('Site Name:', storeSiteName);
 
+      // Confirm deletion
       await this.validateAndFillStrings(`//input[@placeholder="${storeSiteName}"]`, storeSiteName);
+
+      // Click final delete confirmation
       await this.validateAndClick('//button[contains(text(),"Cancel")]/preceding-sibling::button[contains(text(),"Delete Site")]');
+
     } catch (error) {
       console.error(`Delete site ${siteId} failed:`, error);
       throw error;
