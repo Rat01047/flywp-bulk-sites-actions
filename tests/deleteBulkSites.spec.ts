@@ -30,19 +30,13 @@ test('Login and Store State', async ({ browser, page }) => {
   }
 });
 
-test('Delete Sites Using Stored State', async ({ page }) => {
-  // Validate server name
-  expect(Servers.serverName, 'Server name must be provided').toBeTruthy();
-
-  console.log('Deleting sites for Server:', Servers.serverName);
-
+test('Delete All Servers and Sites', async ({ page }) => {
   try {
-    // Delete sites
     const sitesBulkAction = new SitesBulkAction(page);
-    await sitesBulkAction.deleteServerAllSites(Servers.serverName);
-    console.log('Site deletion completed successfully');
+    await sitesBulkAction.deleteAllServersAndSites();
+    console.log('All servers and their sites deleted successfully');
   } catch (error) {
-    console.error('Site deletion failed:', error);
+    console.error('Bulk server/site deletion failed:', error);
     throw error;
   }
 });
